@@ -3,6 +3,7 @@
 This is a production-ready backend for [tldraw sync](https://tldraw.dev/docs/sync).
 
 - Your client-side tldraw-based app can be served from anywhere you want.
+<<<<<<< HEAD
 - This backend uses [Cloudflare Workers](https://developers.cloudflare.com/workers/), and will need
   to be deployed to your own Cloudflare account.
 - Each whiteboard is synced via
@@ -15,12 +16,28 @@ This is a production-ready backend for [tldraw sync](https://tldraw.dev/docs/syn
   This is a minimal setup of the same system that powers multiplayer collaboration for hundreds of
   thousands of rooms & users on www.tldraw.com. Because durable objects effectively create a mini
   server instance for every single active room, we've never needed to worry about scale. Cloudflare
+=======
+- This backend uses [Rivet](https://www.rivet.dev/), and will need
+  to be deployed to your cloud of choice. See see the
+  [available deploy options](https://www.rivet.dev/docs/#deploy-options).
+- Each whiteboard is synced via
+  [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to a [Rivet
+  Actor](https://www.rivet.dev/docs/actors/).
+- Whiteboards and any uploaded images/videos are stored in a [S3](https://aws.amazon.com/s3/)
+  bucket (if configured).
+- Although unrelated to tldraw sync, this server also includes a component to fetch link previews
+  for URLs added to the canvas.
+  This is a minimal setup of the same system that powers multiplayer collaboration for hundreds of
+  thousands of rooms & users on www.tldraw.com. Because actors effectively create a mini
+  server instance for every single active room, we've never needed to worry about scale. Rivet
+>>>>>>> 53c94df90 (init rivet support)
   handles the tricky infrastructure work of ensuring there's only ever one instance of each room, and
   making sure that every user gets connected to that instance. We've found that with this approach,
   each room is able to handle about 50 simultaneous collaborators.
 
 ## Overview
 
+<<<<<<< HEAD
 [![architecture](./arch.png)](https://www.tldraw.com/ro/Yb_QHJFP9syPZq1YrV3YR?v=-255,-148,2025,1265&p=page)
 
 When a user opens a room, they connect via Workers to a durable object. Each durable object is like
@@ -35,10 +52,25 @@ Static assets like images and videos are too big to be synced via websockets and
 Instead, they're uploaded to workers which store them in the same R2 bucket as the rooms. When
 they're downloaded, they're cached on cloudflare's edge network to reduce costs and make serving
 them faster.
+=======
+[![architecture](./arch.png)](https://www.tldraw.com/p/wpOL9V3ZaM6lsSFMqGKGk?d=v5232.2279.6720.4422.page)
+
+When a user opens a room, they connect to a Rivet Actor. Each Rivet Actor is like
+its own miniature server. There's only ever one for each room, and all the users of that room
+connect to it. When a user makes a change to the drawing, it's sent via a websocket connection to
+the actor for that room. The actor applies the change to its in-memory copy of the
+document, and broadcasts the change via websockets to all other connected clients. On a regular
+schedule, the actor's content gets persisted to Rivet's storage mechanism. When the last client leaves the
+room, the actor will shut down.
+
+Static assets like images and videos are too big to be synced via websockets and an actor.
+Instead, they're uploaded to S3 using presigned requests.
+>>>>>>> 53c94df90 (init rivet support)
 
 ## Development
 
 To install dependencies, run `yarn`. To start a local development server, run `yarn dev`. This will
+<<<<<<< HEAD
 start a [`vite`](https://vitejs.dev/) dev server running both your application frontend, and the
 cloudflare workers backend via the [cloudflare vite
 plugin](https://developers.cloudflare.com/workers/vite-plugin/). The app & server should now be
@@ -55,6 +87,19 @@ The backend worker is under [`worker`](./worker/), and is split across several f
 - **[`worker/assetUploads.ts`](./worker/assetUploads.ts):** uploads, downloads, and caching for
   static assets like images and videos.
 - **[`worker/bookmarkUnfurling.ts`](./worker/bookmarkUnfurling.ts):** extract URL metadata for bookmark shapes.
+=======
+start a [`vite`](https://vitejs.dev/) for the frontend and a RivetKit
+development server for the backend. The app & server should now be running at
+http://localhost:5137.
+
+The backend server is under [`server`](./server/), and is split across several files:
+
+- **[`server/registry.ts`](./server/registry.ts):** defines the tldraw actor and sets up the Rivet registry.
+  This creates a [`TLSocketRoom`](https://tldraw.dev/reference/sync-core/TLSocketRoom) for each active room
+  and handles WebSocket connections.
+- **[`server/server.ts`](./server/server.ts):** the main entrypoint that starts the Rivet registry with
+  CORS configuration.
+>>>>>>> 53c94df90 (init rivet support)
 
 The frontend client is under [`client`](./client):
 
@@ -65,19 +110,33 @@ The frontend client is under [`client`](./client):
 - **[`client/getBookmarkPreview.tsx`](./client/getBookmarkPreview.tsx):** how does the client fetch
   bookmark previews from the worker?
 
+<<<<<<< HEAD
   ## Custom shapes
 
 To add support for custom shapes, see the [tldraw sync custom shapes docs](https://tldraw.dev/docs/sync#Custom-shapes--bindings).
 
 ## Adding cloudflare to your own repo
+=======
+## Custom shapes
+
+To add support for custom shapes, see the [tldraw sync custom shapes docs](https://tldraw.dev/docs/sync#Custom-shapes--bindings).
+
+## Adding Rivet to your own repo
+>>>>>>> 53c94df90 (init rivet support)
 
 If you already have an app using tldraw and want to use the system in this repo, you can copy and
 paste the relevant parts to your own app.
 
+<<<<<<< HEAD
 To add the server to your own app, copy the contents of the [`worker`](./worker/) folder and
 [`./wrangler.toml`](./wrangler.toml) into your app. Add the dependencies from
 [`package.json`](./package.json). You can run the worker using `wrangler dev` in the same folder as
 `./wrangler.toml`.
+=======
+To add the server to your own app, copy the contents of the [`server`](./server/) folder into your app.
+Add the dependencies from [`package.json`](./package.json). You can run the server using `yarn dev` or
+by following the [Rivet deployment documentation](https://www.rivet.dev/docs/).
+>>>>>>> 53c94df90 (init rivet support)
 
 To point your existing client at the server defined in this repo, copy
 [`client/multiplayerAssetStore.tsx`](./client/multiplayerAssetStore.tsx) and

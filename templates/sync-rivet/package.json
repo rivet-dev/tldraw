@@ -30,17 +30,31 @@
 	"dependencies": {
 		"@hono/node-server": "^1.19.5",
 		"@hono/node-ws": "^1.2.0",
+<<<<<<< HEAD
 		"@rivetkit/react": "https://pkg.pr.new/rivet-dev/rivet/@rivetkit/react@ea8ef90",
+=======
+		"@rivetkit/react": "^2.0.25-rc.1",
+>>>>>>> 53c94df90 (init rivet support)
 		"@tldraw/sync": "workspace:*",
 		"@tldraw/sync-core": "workspace:*",
 		"@tldraw/tlschema": "workspace:*",
 		"itty-router": "^5.0.18",
 		"lodash.throttle": "^4.1.1",
+<<<<<<< HEAD
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-router-dom": "^6.28.2",
 		"rivetkit": "https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90",
 		"tldraw": "workspace:*"
+=======
+		"process": "^0.11.10",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-router-dom": "^6.28.2",
+		"rivetkit": "^2.0.25-rc.1",
+		"tldraw": "workspace:*",
+		"util": "^0.12.5"
+>>>>>>> 53c94df90 (init rivet support)
 	},
 	"devDependencies": {
 		"@types/lodash.throttle": "^4.1.9",

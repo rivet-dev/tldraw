@@ -15,9 +15,15 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
+<<<<<<< HEAD
 		"types": ["vite/client", "./worker-configuration.d.ts"]
 	},
 	"include": ["client", "server", "worker", "vite.config.ts"],
+=======
+		"types": ["vite/client"]
+	},
+	"include": ["client", "server", "vite.config.ts"],
+>>>>>>> 53c94df90 (init rivet support)
 	"references": [
 		{ "path": "../../packages/sync" },
 		{ "path": "../../packages/sync-core" },

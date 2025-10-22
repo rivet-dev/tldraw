@@ -24,8 +24,18 @@ const tldrawRoom = actor({
 			return { status: "ok" };
 		},
 	},
+<<<<<<< HEAD
 	onWebSocket: async (c, websocket: UniversalWebSocket, { request }) => {
 		const url = new URL(request.url);
+=======
+	onWebSocket: async (c, websocket: UniversalWebSocket) => {
+		if (!c.request) {
+			websocket.close(1008, "Missing request");
+			return;
+		}
+
+		const url = new URL(c.request.url);
+>>>>>>> 53c94df90 (init rivet support)
 		const sessionId = url.searchParams.get("sessionId");
 
 		if (!sessionId) {

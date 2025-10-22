@@ -24,6 +24,13 @@ export const TEMPLATES: Template[] = [
 		repo: 'tldraw/tldraw-sync-cloudflare',
 	},
 	{
+		name: 'Multiplayer',
+		description: 'Real-time multiplayer with a self-hosted backend.',
+		shortDescription: 'Real-time multiplayer.',
+		order: 2,
+		repo: 'tldraw/tldraw-sync-rivet',
+	},
+	{
 		name: 'Agent',
 		description: 'Work on the canvas with an AI agent.',
 		shortDescription: 'An AI-powered agent.',

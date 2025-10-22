@@ -1,6 +1,10 @@
 import { createClient } from 'rivetkit/client'
 import { useSync } from '@tldraw/sync'
+<<<<<<< HEAD
 import { ReactNode, useEffect, useMemo, useState } from 'react'
+=======
+import { ReactNode, useEffect, useState } from 'react'
+>>>>>>> 53c94df90 (init rivet support)
 import { useParams } from 'react-router-dom'
 import { Tldraw } from 'tldraw'
 import { getBookmarkPreview } from '../getBookmarkPreview'
@@ -25,6 +29,7 @@ export function Room() {
 			const actorId = await client.tldrawRoom.getOrCreate(roomId!).resolve();
 
 			const wsOrigin = rivetUrl.replace(/^http/, 'ws')
+<<<<<<< HEAD
 			const params = new URLSearchParams({
 				x_rivet_target: 'actor',
 				x_rivet_actor: actorId,
@@ -38,6 +43,15 @@ export function Room() {
 			}
 
 			const wsUrl = `${wsOrigin}/raw/websocket?${params.toString()}`
+=======
+			let wsUrl: string;
+			if (rivetToken) {
+				wsUrl = `${wsOrigin}/gateway/${encodeURIComponent(actorId)}@${encodeURIComponent(rivetToken)}/websocket`
+			} else {
+				wsUrl = `${wsOrigin}/gateway/${encodeURIComponent(actorId)}/websocket`
+			}
+
+>>>>>>> 53c94df90 (init rivet support)
 			setRoomUri(wsUrl)
 		}
 
