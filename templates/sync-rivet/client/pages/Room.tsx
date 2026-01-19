@@ -1,69 +1,54 @@
-import { createClient } from 'rivetkit/client'
 import { useSync } from '@tldraw/sync'
-<<<<<<< HEAD
-import { ReactNode, useEffect, useMemo, useState } from 'react'
-=======
 import { ReactNode, useEffect, useState } from 'react'
->>>>>>> 53c94df90 (init rivet support)
 import { useParams } from 'react-router-dom'
+import { createClient } from 'rivetkit/client'
 import { Tldraw } from 'tldraw'
 import { getBookmarkPreview } from '../getBookmarkPreview'
 import { multiplayerAssetStore } from '../multiplayerAssetStore'
 
 const rivetUrl = import.meta.env.VITE_RIVET_ENDPOINT || 'http://localhost:6420'
 const rivetToken = import.meta.env.VITE_RIVET_TOKEN
-const rivetNamespace = import.meta.env.VITE_RIVET_NAMESPACE
 
 const client = createClient({
 	endpoint: rivetUrl,
 	token: rivetToken,
-	namespace: rivetNamespace,
 })
+
+// Generate a random client ID for this connection
+const generateClientId = () => `client-${Math.random().toString(36).substring(2, 15)}`
 
 export function Room() {
 	const { roomId } = useParams<{ roomId: string }>()
 	const [roomUri, setRoomUri] = useState<string | undefined>(undefined)
+	const [clientId] = useState(generateClientId)
 
 	useEffect(() => {
 		const loadRoomUri = async () => {
-			const actorId = await client.tldrawRoom.getOrCreate(roomId!).resolve();
+			const actorId = await client.tldrawRoom.getOrCreate(roomId!).resolve()
 
+			// Connect directly to RivetKit server for WebSocket (no subprotocols)
 			const wsOrigin = rivetUrl.replace(/^http/, 'ws')
-<<<<<<< HEAD
-			const params = new URLSearchParams({
-				x_rivet_target: 'actor',
-				x_rivet_actor: actorId,
-			})
+			const wsUrl = `${wsOrigin}/gateway/${actorId}/websocket?clientId=${encodeURIComponent(clientId)}`
 
-			if (rivetToken) {
-				params.set('x_rivet_token', rivetToken)
-			}
-			if (rivetNamespace) {
-				params.set('x_rivet_namespace', rivetNamespace)
-			}
-
-			const wsUrl = `${wsOrigin}/raw/websocket?${params.toString()}`
-=======
-			let wsUrl: string;
-			if (rivetToken) {
-				wsUrl = `${wsOrigin}/gateway/${encodeURIComponent(actorId)}@${encodeURIComponent(rivetToken)}/websocket`
-			} else {
-				wsUrl = `${wsOrigin}/gateway/${encodeURIComponent(actorId)}/websocket`
-			}
-
->>>>>>> 53c94df90 (init rivet support)
 			setRoomUri(wsUrl)
 		}
 
 		if (roomId) {
 			loadRoomUri()
 		}
-	}, [roomId])
+	}, [roomId, clientId])
 
 	if (!roomUri || !roomId) {
 		return (
 			<RoomWrapper roomId={roomId}>
-				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+				<div
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						height: '100%',
+					}}
+				>
 					Loading room...
 				</div>
 			</RoomWrapper>

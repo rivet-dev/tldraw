@@ -416,14 +416,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@asteasolutions/zod-to-openapi@npm:^7.3.0":
-  version: 7.3.4
-  resolution: "@asteasolutions/zod-to-openapi@npm:7.3.4"
+"@asteasolutions/zod-to-openapi@npm:^8.1.0":
+  version: 8.4.0
+  resolution: "@asteasolutions/zod-to-openapi@npm:8.4.0"
   dependencies:
     openapi3-ts: "npm:^4.1.2"
   peerDependencies:
-    zod: ^3.20.2
-  checksum: 10/05e336e3c94264000abb03a71743925e3a48d10771afa8cdd9e1cf0a944cc82b3371d272d961fa63584e8ee26bda43aa9fba2737f503e6853ff20f5cf30a718a
+    zod: ^4.0.0
+  checksum: 10/8536db0d78e36dc9b8c23c952e211a1595567d102f7383f0b9dbf63c28a33d295939ec375b7825351e8bcde93e6b5d94e019edfad405232a427f53720ad8b0c7
   languageName: node
   linkType: hard
 
@@ -1856,20 +1856,6 @@ __metadata:
   version: 0.3.11
   resolution: "@badrap/valita@npm:0.3.11"
   checksum: 10/260c273dfb3fc0deb9368b447092cd1e213f9c33f213ccbf2458dab848e934347ace6f432b686b35c9460b552839eca45aaaab98d980c0aa3bfa372dc4be8092
-  languageName: node
-  linkType: hard
-
-"@bare-ts/lib@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@bare-ts/lib@npm:0.4.0"
-  checksum: 10/c4f1940c714c9626d84cc1c6e3ce6d9897ed6ceed7d6b19a0d1c945daaa8e18cb954c3f7f99682fc815e0c2b800954ac190f96515a510f5cd820046bab62bc44
-  languageName: node
-  linkType: hard
-
-"@bare-ts/lib@npm:~0.3.0":
-  version: 0.3.0
-  resolution: "@bare-ts/lib@npm:0.3.0"
-  checksum: 10/06b5de1746c1cb2063521f5f45a59fcf869768b2e9962696e257bd8013f29b407d60ddcd366c09128348c72dc5ea7144810241adce09e9bb73e36c73a23433c0
   languageName: node
   linkType: hard
 
@@ -3624,27 +3610,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hono/zod-openapi@npm:^0.19.10":
-  version: 0.19.10
-  resolution: "@hono/zod-openapi@npm:0.19.10"
+"@hono/zod-openapi@npm:^1.1.5":
+  version: 1.2.0
+  resolution: "@hono/zod-openapi@npm:1.2.0"
   dependencies:
-    "@asteasolutions/zod-to-openapi": "npm:^7.3.0"
-    "@hono/zod-validator": "npm:^0.7.1"
+    "@asteasolutions/zod-to-openapi": "npm:^8.1.0"
+    "@hono/zod-validator": "npm:^0.7.6"
     openapi3-ts: "npm:^4.5.0"
   peerDependencies:
     hono: ">=4.3.6"
-    zod: ">=3.0.0"
-  checksum: 10/879d5b579d27823f5a46d24e27a8f57970d839bb700a9ffc1f7f2970612092a4bc95ebdf5920d23bb565b545b825d084f52e707db8ccab764056497e45e39a2a
+    zod: ^4.0.0
+  checksum: 10/fd48efea145d734c43c1d9e8bf53a4fa78ed052c7af35f6bb92c5c882b7ed21c4004c5749d90d685c7059fcfbf1d0676ce15e52ea9d2b730021208a3a3ec472a
   languageName: node
   linkType: hard
 
-"@hono/zod-validator@npm:^0.7.1":
-  version: 0.7.4
-  resolution: "@hono/zod-validator@npm:0.7.4"
+"@hono/zod-validator@npm:^0.7.6":
+  version: 0.7.6
+  resolution: "@hono/zod-validator@npm:0.7.6"
   peerDependencies:
     hono: ">=3.9.0"
     zod: ^3.25.0 || ^4.0.0
-  checksum: 10/de90d806400f0d9dba91171ca0a5ecba7ce90ae029fa486457792b05ace41d84cec7deba92bb941e4eb2869caa184f52947e53bf7340567371bef250b3a4a891
+  checksum: 10/4610dfe671e2c559c64e13f77be9314f75902f1122a43773b5328cab26ef786af6055f38515ff08f216420936c76f9290a0db3aa88044afc13423d299bd77d78
   languageName: node
   linkType: hard
 
@@ -5427,6 +5413,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pierre/storage@npm:^0.1.1":
+  version: 0.1.4
+  resolution: "@pierre/storage@npm:0.1.4"
+  dependencies:
+    jose: "npm:^5.10.0"
+    snakecase-keys: "npm:^9.0.2"
+    zod: "npm:^3.23.8"
+  checksum: 10/ffac32e148c5ad82ca8cc9766957f5e99321cdea7af1eb078b5c3032268545577edfec11d25169aae80b67c3c9c3ecc7a847a4f94bd9975d0b2f14616f858a76
+  languageName: node
+  linkType: hard
+
 "@pinojs/redact@npm:^0.4.0":
   version: 0.4.0
   resolution: "@pinojs/redact@npm:0.4.0"
@@ -6995,24 +6992,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rivetkit/engine-runner-protocol@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner-protocol@ea8ef90505afd87a43a711ceb9892efe17b98c4c":
-  version: 25.8.1
-  resolution: "@rivetkit/engine-runner-protocol@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner-protocol@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
-  dependencies:
-    "@bare-ts/lib": "npm:^0.4.0"
-  checksum: 10/873c09a2679e427e37333efa3b441f0ea88cba8d8b807cab1a4ffbc594ad7221c978f0b5a1bf8339336a8b73fca88a24a8c2f33962b492a46a0b7b7f285882b1
+"@rivetkit/bare-ts@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@rivetkit/bare-ts@npm:0.6.2"
+  checksum: 10/e2e18d8ee1e6b83ff05d42e92a26c2f2364a049fe9dd42c5e0c97afaec6acfacfa5d089abf5e61ad266f922ac885415a9a09e1c25f6c978df7bb36408bdf4459
   languageName: node
   linkType: hard
 
-"@rivetkit/engine-runner@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner@ea8ef90505afd87a43a711ceb9892efe17b98c4c":
-  version: 25.8.1
-  resolution: "@rivetkit/engine-runner@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
+"@rivetkit/engine-runner-protocol@npm:2.0.38":
+  version: 2.0.38
+  resolution: "@rivetkit/engine-runner-protocol@npm:2.0.38"
   dependencies:
-    "@rivetkit/engine-runner-protocol": "https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner-protocol@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
+    "@rivetkit/bare-ts": "npm:^0.6.2"
+  checksum: 10/ad1959b67f9a663c29d7ac5eb79adfeefbbe54650e6d202b435141365d49dcdb06ebf20df87af3e674580f4a3fc6edeedbfd4ce3f5732699361c188562d7c6c2
+  languageName: node
+  linkType: hard
+
+"@rivetkit/engine-runner@npm:2.0.38":
+  version: 2.0.38
+  resolution: "@rivetkit/engine-runner@npm:2.0.38"
+  dependencies:
+    "@rivetkit/engine-runner-protocol": "npm:2.0.38"
+    "@rivetkit/virtual-websocket": "npm:2.0.33"
     pino: "npm:^9.9.5"
     uuid: "npm:^12.0.0"
     ws: "npm:^8.18.3"
-  checksum: 10/07cc823e1c5ac46b767f1575849374cd3361fda38925432b1beaa1d894d7cec9bb30080979643f42d254f82fc30b56cc4281284bc927b7124c5646f0b78cdee6
+  checksum: 10/f1427d04d033748cb755067f9c762fb59faa387ad23a831cc36bc5454ba1cb4b7a1fbc0d78f2a1594010daa1b76efe62f1f2032ac3fe6684a72f76dab4862872
   languageName: node
   linkType: hard
 
@@ -7023,27 +7028,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rivetkit/framework-base@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/framework-base@ea8ef90505afd87a43a711ceb9892efe17b98c4c":
-  version: 2.0.20
-  resolution: "@rivetkit/framework-base@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/framework-base@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
+"@rivetkit/framework-base@npm:2.0.38":
+  version: 2.0.38
+  resolution: "@rivetkit/framework-base@npm:2.0.38"
   dependencies:
     "@tanstack/store": "npm:^0.7.1"
-    rivetkit: "https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
-  checksum: 10/679a5095627012d897c62dca89eee982ad3377f2730c261f6d70f39d3ffa0f54014bba8f31bdd33fd269311352ae31c6165cced57e3159531c17a9943c312374
+    fast-deep-equal: "npm:^3.1.3"
+    rivetkit: "npm:2.0.38"
+  checksum: 10/2f95d6e1031598e8c6224dbcda302dd3316dc1cf704ee07057636def89eb57597290ee886faf1c02120880409286fa5d0dfd6b324355e337ca8cab20b11f973a
   languageName: node
   linkType: hard
 
-"@rivetkit/react@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/react@ea8ef90":
-  version: 2.0.20
-  resolution: "@rivetkit/react@https://pkg.pr.new/rivet-dev/rivet/@rivetkit/react@ea8ef90"
+"@rivetkit/on-change@npm:^6.0.2-rc.1":
+  version: 6.0.2-rc.1
+  resolution: "@rivetkit/on-change@npm:6.0.2-rc.1"
+  checksum: 10/1c8850dbec781b7e2c9814a96ecf8ea6039f4647f117727d5521f0909caecba1758a74f49d670516412253b006f7e4bfca227c2bea19b88048ab8fb7f76f7b97
+  languageName: node
+  linkType: hard
+
+"@rivetkit/react@npm:^2.0.38":
+  version: 2.0.38
+  resolution: "@rivetkit/react@npm:2.0.38"
   dependencies:
-    "@rivetkit/framework-base": "https://pkg.pr.new/rivet-dev/rivet/@rivetkit/framework-base@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
+    "@rivetkit/framework-base": "npm:2.0.38"
     "@tanstack/react-store": "npm:^0.7.1"
-    rivetkit: "https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
+    rivetkit: "npm:^2.0.38"
   peerDependencies:
     react: ^18 || ^19
     react-dom: ^18 || ^19
-  checksum: 10/5c8f66e7027c19e2762759c2d4fa83da6635d78f17b5d5ab6283d7003650b4dd0706f5be9970c1aedbda18d5f0f6b9c773848cd851a07da4128666fd26a1f25d
+  checksum: 10/0c5b425a46b52b5ac1733755a18e287d52458e56078ac4b565edcac425d317bd96f42d1a7b4d622e7c2015df36ae0016c02bd5f1a04ed6627cd44c71d01e9917
+  languageName: node
+  linkType: hard
+
+"@rivetkit/virtual-websocket@npm:2.0.33":
+  version: 2.0.33
+  resolution: "@rivetkit/virtual-websocket@npm:2.0.33"
+  checksum: 10/2c01e2894744c9108b5989a1b57db57505641651ec1537192cfefa1d81876139b400156010168e1a01ad57fdd443434de25cc2d3c6a98f24062a8c7031772698
   languageName: node
   linkType: hard
 
@@ -9285,6 +9305,7 @@ __metadata:
   dependencies:
     "@clerk/backend": "npm:^1.23.7"
     "@cloudflare/workers-types": "npm:^4.20250913.0"
+    "@pierre/storage": "npm:^0.1.1"
     "@rocicorp/zero": "npm:0.19.2025050203"
     "@supabase/auth-helpers-remix": "npm:^0.2.6"
     "@supabase/supabase-js": "npm:^2.48.1"
@@ -13199,6 +13220,13 @@ __metadata:
   version: 5.4.1
   resolution: "chalk@npm:5.4.1"
   checksum: 10/29df3ffcdf25656fed6e95962e2ef86d14dfe03cd50e7074b06bad9ffbbf6089adbb40f75c00744d843685c8d008adaf3aed31476780312553caf07fa86e5bc7
+  languageName: node
+  linkType: hard
+
+"change-case@npm:^5.4.4":
+  version: 5.4.4
+  resolution: "change-case@npm:5.4.4"
+  checksum: 10/446e5573f3c854290a91292afef92b957d2e43a928260c91989b482aa860caaa29711b6725fc40c200af68061cbab357b033446d16a17bc5c553636994074e92
   languageName: node
   linkType: hard
 
@@ -17895,9 +17923,9 @@ __metadata:
   linkType: hard
 
 "hono@npm:^4.7.0":
-  version: 4.10.2
-  resolution: "hono@npm:4.10.2"
-  checksum: 10/92223307d2340fdb25c657363908b4ee679e28a2b9fae3767201a5b923d8a71f5588ec8f9d041ebd4876f8eb06c0a8f5044990ce290b8e5bc37b25a371de393d
+  version: 4.11.4
+  resolution: "hono@npm:4.11.4"
+  checksum: 10/c198a5779c6024ae0e643e30ea735cd1bd9d74ffec92c94076a99dc2f465aaaffd3d08be1cc67e50551e01d043eb159b64f43a7e7857fbc385d485177d0a0238
   languageName: node
   linkType: hard
 
@@ -19248,7 +19276,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^5.9.3, jose@npm:^5.9.6":
+"jose@npm:^5.10.0, jose@npm:^5.9.3, jose@npm:^5.9.6":
   version: 5.10.0
   resolution: "jose@npm:5.10.0"
   checksum: 10/03881d1dfb390dcf50926402edcfe233bf557b5a77321fcb1bdb53453bc1cdd26d2d0a9ab28c7445cbb826881f84fdf5074179700f10c2711ccb9880f51065d7
@@ -20283,6 +20311,13 @@ __metadata:
   version: 4.3.0
   resolution: "map-obj@npm:4.3.0"
   checksum: 10/fbc554934d1a27a1910e842bc87b177b1a556609dd803747c85ece420692380827c6ae94a95cce4407c054fa0964be3bf8226f7f2cb2e9eeee432c7c1985684e
+  languageName: node
+  linkType: hard
+
+"map-obj@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "map-obj@npm:5.0.2"
+  checksum: 10/ebe5484eaf03938f447b26eaaa807b01dcc6052281972308b8818fc416c7c66503bd5482fc4eeb5374c0d25271a178d4f5e1929e6bd3dc8c1357decf4a7f0d25
   languageName: node
   linkType: hard
 
@@ -22343,13 +22378,6 @@ __metadata:
   version: 5.1.0
   resolution: "oidc-token-hash@npm:5.1.0"
   checksum: 10/b1ac3bf07315b1e26a8a33da714d1adee58f4aa488a5680cee49adb58e3b7fd7b00be5acca86d93215de1ce1a7d53720cbc7eba8347124f251703ede3abdbcb6
-  languageName: node
-  linkType: hard
-
-"on-change@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "on-change@npm:5.0.1"
-  checksum: 10/e22dbdb5dcc5b4686b759df5874c6fc83c5959ec2a27b1edbfd8b48e64fb22d6dca15da025cc3b4e49619b24642ad7d7bb3bb32b39cf8f84da0ffbf9134535b6
   languageName: node
   linkType: hard
 
@@ -25224,23 +25252,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rivetkit@https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90":
-  version: 2.0.20
-  resolution: "rivetkit@https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90"
+"rivetkit@npm:2.0.38, rivetkit@npm:^2.0.38":
+  version: 2.0.38
+  resolution: "rivetkit@npm:2.0.38"
   dependencies:
-    "@bare-ts/lib": "npm:~0.3.0"
     "@hono/standard-validator": "npm:^0.1.3"
-    "@hono/zod-openapi": "npm:^0.19.10"
-    "@rivetkit/engine-runner": "https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
+    "@hono/zod-openapi": "npm:^1.1.5"
+    "@rivetkit/bare-ts": "npm:^0.6.2"
+    "@rivetkit/engine-runner": "npm:2.0.38"
     "@rivetkit/fast-json-patch": "npm:^3.1.2"
+    "@rivetkit/on-change": "npm:^6.0.2-rc.1"
+    "@rivetkit/virtual-websocket": "npm:2.0.33"
     cbor-x: "npm:^1.6.0"
+    get-port: "npm:^7.1.0"
     hono: "npm:^4.7.0"
     invariant: "npm:^2.2.4"
     nanoevents: "npm:^9.1.0"
-    on-change: "npm:^5.0.1"
     p-retry: "npm:^6.2.1"
     pino: "npm:^9.5.0"
-    zod: "npm:^3.25.76"
+    uuid: "npm:^12.0.0"
+    vbare: "npm:^0.0.4"
+    zod: "npm:^4.1.0"
   peerDependencies:
     "@hono/node-server": ^1.14.0
     "@hono/node-ws": ^1.1.1
@@ -25255,42 +25287,7 @@ __metadata:
       optional: true
     ws:
       optional: true
-  checksum: 10/54ce2b4b0116236412a14345d2e818f4d16e9a0fcb103c8f76e1fd94665a65e5953a63a9f037d1f4befb6a543cbb0a859ea2cb9583c1c58e4174af52355aaee2
-  languageName: node
-  linkType: hard
-
-"rivetkit@https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90505afd87a43a711ceb9892efe17b98c4c":
-  version: 2.0.20
-  resolution: "rivetkit@https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
-  dependencies:
-    "@bare-ts/lib": "npm:~0.3.0"
-    "@hono/standard-validator": "npm:^0.1.3"
-    "@hono/zod-openapi": "npm:^0.19.10"
-    "@rivetkit/engine-runner": "https://pkg.pr.new/rivet-dev/rivet/@rivetkit/engine-runner@ea8ef90505afd87a43a711ceb9892efe17b98c4c"
-    "@rivetkit/fast-json-patch": "npm:^3.1.2"
-    cbor-x: "npm:^1.6.0"
-    hono: "npm:^4.7.0"
-    invariant: "npm:^2.2.4"
-    nanoevents: "npm:^9.1.0"
-    on-change: "npm:^5.0.1"
-    p-retry: "npm:^6.2.1"
-    pino: "npm:^9.5.0"
-    zod: "npm:^3.25.76"
-  peerDependencies:
-    "@hono/node-server": ^1.14.0
-    "@hono/node-ws": ^1.1.1
-    eventsource: ^4.0.0
-    ws: ^8.0.0
-  peerDependenciesMeta:
-    "@hono/node-server":
-      optional: true
-    "@hono/node-ws":
-      optional: true
-    eventsource:
-      optional: true
-    ws:
-      optional: true
-  checksum: 10/54ce2b4b0116236412a14345d2e818f4d16e9a0fcb103c8f76e1fd94665a65e5953a63a9f037d1f4befb6a543cbb0a859ea2cb9583c1c58e4174af52355aaee2
+  checksum: 10/d4a6ff8bf0e78f8834a3f03bb81ecd8b95ad2088fbe0b90286c67d41ce491c299ff12fd478af0decd018eb3e0550849a249f86f436c7f17002c8abdf3e782930
   languageName: node
   linkType: hard
 
@@ -26222,6 +26219,17 @@ __metadata:
     snake-case: "npm:^3.0.4"
     type-fest: "npm:^4.15.0"
   checksum: 10/d8062a06ec95fbacea2f5c4a3f02cdbff113e1fa6c4a25a90840186d9d0b428ddee245d4af34019267d93447632b90d8852a962de60f0d8d5871c1abaac3e29b
+  languageName: node
+  linkType: hard
+
+"snakecase-keys@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "snakecase-keys@npm:9.0.2"
+  dependencies:
+    change-case: "npm:^5.4.4"
+    map-obj: "npm:^5.0.2"
+    type-fest: "npm:^4.15.0"
+  checksum: 10/90421da34bdd58d91c059b028839b1da06fb4fd15abb6cfc8f9a9b3e768d867410161de86e8c5d37de56ac9052ec34052159e46a2f21240d1416f2f900190577
   languageName: node
   linkType: hard
 
@@ -27537,7 +27545,7 @@ __metadata:
   dependencies:
     "@hono/node-server": "npm:^1.19.5"
     "@hono/node-ws": "npm:^1.2.0"
-    "@rivetkit/react": "https://pkg.pr.new/rivet-dev/rivet/@rivetkit/react@ea8ef90"
+    "@rivetkit/react": "npm:^2.0.38"
     "@tldraw/sync": "workspace:*"
     "@tldraw/sync-core": "workspace:*"
     "@tldraw/tlschema": "workspace:*"
@@ -27546,15 +27554,17 @@ __metadata:
     "@types/react-dom": "npm:^18.3.5"
     "@vitejs/plugin-react-swc": "npm:^3.10.2"
     concurrently: "npm:^9.1.2"
+    hono: "npm:^4.7.0"
     itty-router: "npm:^5.0.18"
     lodash.throttle: "npm:^4.1.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^6.28.2"
-    rivetkit: "https://pkg.pr.new/rivet-dev/rivet/rivetkit@ea8ef90"
+    rivetkit: "npm:^2.0.38"
     tldraw: "workspace:*"
     typescript: "npm:^5.8.3"
     vite: "npm:^7.0.1"
+    ws: "npm:^8.18.1"
   languageName: unknown
   linkType: soft
 
@@ -28872,6 +28882,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vbare@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "vbare@npm:0.0.4"
+  checksum: 10/c976d1c3f631ea9d8b046b699110c6abb60364869eff046079f7aa158f4830aef823668157db19a0e3b40f7c894872049097310259fce527f4b0fcad0381c667
+  languageName: node
+  linkType: hard
+
 "vercel@npm:^34.4.0":
   version: 34.4.0
   resolution: "vercel@npm:34.4.0"
@@ -29720,7 +29737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.0.0, ws@npm:^8.16.0, ws@npm:^8.17.0, ws@npm:^8.18.0, ws@npm:^8.18.1, ws@npm:^8.18.3":
+"ws@npm:^8.0.0, ws@npm:^8.16.0, ws@npm:^8.17.0, ws@npm:^8.18.0, ws@npm:^8.18.1":
   version: 8.18.3
   resolution: "ws@npm:8.18.3"
   peerDependencies:
@@ -29732,6 +29749,21 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 10/725964438d752f0ab0de582cd48d6eeada58d1511c3f613485b5598a83680bedac6187c765b0fe082e2d8cc4341fc57707c813ae780feee82d0c5efe6a4c61b6
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.18.3":
+  version: 8.19.0
+  resolution: "ws@npm:8.19.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 10/26e4901e93abaf73af9f26a93707c95b4845e91a7a347ec8c569e6e9be7f9df066f6c2b817b2d685544e208207898a750b78461e6e8d810c11a370771450c31b
   languageName: node
   linkType: hard
 
@@ -29884,11 +29916,11 @@ __metadata:
   linkType: hard
 
 "yaml@npm:^2.8.0":
-  version: 2.8.1
-  resolution: "yaml@npm:2.8.1"
+  version: 2.8.2
+  resolution: "yaml@npm:2.8.2"
   bin:
     yaml: bin.mjs
-  checksum: 10/eae07b3947d405012672ec17ce27348aea7d1fa0534143355d24a43a58f5e05652157ea2182c4fe0604f0540be71f99f1173f9d61018379404507790dff17665
+  checksum: 10/4eab0074da6bc5a5bffd25b9b359cf7061b771b95d1b3b571852098380db3b1b8f96e0f1f354b56cc7216aa97cea25163377ccbc33a2e9ce00316fe8d02f4539
   languageName: node
   linkType: hard
 
@@ -30149,10 +30181,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.25.76":
-  version: 3.25.76
-  resolution: "zod@npm:3.25.76"
-  checksum: 10/f0c963ec40cd96858451d1690404d603d36507c1fc9682f2dae59ab38b578687d542708a7fdbf645f77926f78c9ed558f57c3d3aa226c285f798df0c4da16995
+"zod@npm:^4.1.0":
+  version: 4.3.5
+  resolution: "zod@npm:4.3.5"
+  checksum: 10/3148bd52e56ab7c1641ec397e6be6eddbb1d8f5db71e95baab9bb9622a0ea49d8a385885fc1c22b90fa6d8c5234e051f4ef5d469cfe3fb90198d5a91402fd89c
   languageName: node
   linkType: hard
 

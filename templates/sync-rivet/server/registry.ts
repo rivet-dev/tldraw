@@ -1,14 +1,10 @@
-import { TLSocketRoom } from "@tldraw/sync-core";
-import {
-	type TLRecord,
-	createTLSchema,
-	defaultShapeSchemas,
-} from "@tldraw/tlschema";
-import { actor, setup, type UniversalWebSocket } from "rivetkit";
+import { TLSocketRoom } from '@tldraw/sync-core'
+import { createTLSchema, defaultShapeSchemas, type TLRecord } from '@tldraw/tlschema'
+import { actor, setup, type UniversalWebSocket } from 'rivetkit'
 
 const schema = createTLSchema({
 	shapes: { ...defaultShapeSchemas },
-});
+})
 
 const tldrawRoom = actor({
 	state: {
@@ -17,47 +13,42 @@ const tldrawRoom = actor({
 	createVars: () => {
 		return {
 			room: undefined as TLSocketRoom<TLRecord, void> | undefined,
-		};
+		}
 	},
 	actions: {
-		ping: async () => {
-			return { status: "ok" };
+		getOrCreate: async () => {
+			return { status: 'ok' }
 		},
 	},
-<<<<<<< HEAD
-	onWebSocket: async (c, websocket: UniversalWebSocket, { request }) => {
-		const url = new URL(request.url);
-=======
 	onWebSocket: async (c, websocket: UniversalWebSocket) => {
 		if (!c.request) {
-			websocket.close(1008, "Missing request");
-			return;
+			websocket.close(1008, 'Missing request')
+			return
 		}
 
-		const url = new URL(c.request.url);
->>>>>>> 53c94df90 (init rivet support)
-		const sessionId = url.searchParams.get("sessionId");
+		const url = new URL(c.request.url)
+		const clientId = url.searchParams.get('clientId')
 
-		if (!sessionId) {
-			websocket.close(1008, "Missing sessionId");
-			return;
+		if (!clientId) {
+			websocket.close(1008, 'Missing clientId')
+			return
 		}
 
 		if (!c.vars.room) {
-			const initialSnapshot = c.state.snapshot || undefined;
+			const initialSnapshot = c.state.snapshot || undefined
 			c.vars.room = new TLSocketRoom<TLRecord, void>({
 				schema,
 				initialSnapshot,
-			});
+			})
 		}
 
 		c.vars.room.handleSocketConnect({
-			sessionId,
+			sessionId: clientId,
 			socket: websocket,
-		});
+		})
 	},
-});
+})
 
 export const registry = setup({
 	use: { tldrawRoom },
-});
+})
