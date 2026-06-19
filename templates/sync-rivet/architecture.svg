@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#525252"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="320" fill="#09090b"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" font-size="18" font-weight="600" fill="#fafafa">Rivet + tldraw Architecture</text>
+
+  <!-- Browser 1 -->
+  <g transform="translate(30, 60)">
+    <rect width="100" height="65" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="50" y="28" text-anchor="middle" font-size="11" font-weight="500" fill="#fafafa">Browser</text>
+    <text x="50" y="46" text-anchor="middle" font-size="10" fill="#71717a">tldraw</text>
+  </g>
+
+  <!-- Browser 2 -->
+  <g transform="translate(30, 140)">
+    <rect width="100" height="65" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="50" y="28" text-anchor="middle" font-size="11" font-weight="500" fill="#fafafa">Browser</text>
+    <text x="50" y="46" text-anchor="middle" font-size="10" fill="#71717a">tldraw</text>
+  </g>
+
+  <!-- Browser 3 -->
+  <g transform="translate(30, 220)">
+    <rect width="100" height="65" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="50" y="28" text-anchor="middle" font-size="11" font-weight="500" fill="#fafafa">Browser</text>
+    <text x="50" y="46" text-anchor="middle" font-size="10" fill="#71717a">tldraw</text>
+  </g>
+
+  <!-- Gateway -->
+  <g transform="translate(220, 110)">
+    <rect width="130" height="100" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="65" y="30" text-anchor="middle" font-size="12" font-weight="500" fill="#fafafa">Rivet Gateway</text>
+    <text x="65" y="55" text-anchor="middle" font-size="10" fill="#71717a">Routes by</text>
+    <text x="65" y="72" text-anchor="middle" font-size="10" fill="#71717a">roomId</text>
+  </g>
+
+  <!-- WebSocket label -->
+  <text x="175" y="155" text-anchor="middle" font-size="9" fill="#52525b">WebSocket</text>
+
+  <!-- Arrows: Browsers to Gateway -->
+  <line x1="135" y1="92" x2="215" y2="140" stroke="#525252" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="135" y1="172" x2="215" y2="165" stroke="#525252" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="135" y1="252" x2="215" y2="190" stroke="#525252" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Actors container label -->
+  <text x="540" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#ff4f00">Rivet Actors</text>
+  <text x="540" y="70" text-anchor="middle" font-size="9" fill="#71717a">(1 actor per room)</text>
+
+  <!-- Actor 1 (Room A) -->
+  <g transform="translate(430, 85)">
+    <rect width="220" height="70" rx="8" fill="#18181b" stroke="#ff4f00" stroke-width="1.5"/>
+    <text x="60" y="25" text-anchor="middle" font-size="11" font-weight="500" fill="#ff4f00">Actor: Room A</text>
+    <text x="60" y="44" text-anchor="middle" font-size="10" fill="#a1a1aa">TLSocketRoom</text>
+    <text x="60" y="60" text-anchor="middle" font-size="9" fill="#52525b">2 users</text>
+    <!-- State inside actor -->
+    <rect x="130" y="12" width="80" height="46" rx="4" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+    <text x="170" y="30" text-anchor="middle" font-size="8" fill="#71717a">state</text>
+    <text x="170" y="44" text-anchor="middle" font-size="8" fill="#52525b">{ snapshot }</text>
+  </g>
+
+  <!-- Actor 2 (Room B) -->
+  <g transform="translate(430, 170)">
+    <rect width="220" height="70" rx="8" fill="#18181b" stroke="#ff4f00" stroke-width="1.5"/>
+    <text x="60" y="25" text-anchor="middle" font-size="11" font-weight="500" fill="#ff4f00">Actor: Room B</text>
+    <text x="60" y="44" text-anchor="middle" font-size="10" fill="#a1a1aa">TLSocketRoom</text>
+    <text x="60" y="60" text-anchor="middle" font-size="9" fill="#52525b">1 user</text>
+    <!-- State inside actor -->
+    <rect x="130" y="12" width="80" height="46" rx="4" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+    <text x="170" y="30" text-anchor="middle" font-size="8" fill="#71717a">state</text>
+    <text x="170" y="44" text-anchor="middle" font-size="8" fill="#52525b">{ snapshot }</text>
+  </g>
+
+  <!-- Arrows: Gateway to Actors -->
+  <line x1="355" y1="145" x2="425" y2="120" stroke="#525252" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="355" y1="175" x2="425" y2="205" stroke="#525252" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- State persistence note -->
+  <text x="540" y="265" text-anchor="middle" font-size="9" fill="#52525b">State auto-persisted by Rivet</text>
+
+</svg>

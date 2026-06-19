@@ -1,0 +1,56 @@
+{
+	"name": "tldraw-sync-rivet",
+	"private": true,
+	"version": "0.0.0",
+	"author": {
+		"name": "tldraw GB Ltd.",
+		"email": "hello@tldraw.com"
+	},
+	"homepage": "https://tldraw.dev",
+	"license": "MIT",
+	"type": "module",
+	"tldraw_template": {
+		"repo": "tldraw/tldraw-sync-rivet",
+		"cli": {
+			"name": "Multiplayer",
+			"description": "Real-time multiplayer with a self-hosted backend.",
+			"shortDescription": "Real-time multiplayer.",
+			"order": 2
+		},
+		"scripts": {
+			"lint": null
+		}
+	},
+	"scripts": {
+		"dev": "RIVET_RUN_ENGINE=1 concurrently -n vite,configure \"vite\" \"node scripts/configure.mjs\"",
+		"build": "tsc && vite build && vite build --mode server",
+		"lint": "yarn run -T tsx ../../internal/scripts/lint.ts",
+		"start": "srvx --static=public/ dist/server.js"
+	},
+	"dependencies": {
+		"@aws-sdk/client-s3": "^3.700.0",
+		"@aws-sdk/s3-request-presigner": "^3.700.0",
+		"@tldraw/sync": "workspace:*",
+		"@tldraw/sync-core": "workspace:*",
+		"@tldraw/tlschema": "workspace:*",
+		"hono": "^4.7.0",
+		"lodash.throttle": "^4.1.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-router-dom": "^6.28.2",
+		"rivetkit": "^2.3.1",
+		"srvx": "^0.10.0",
+		"tldraw": "workspace:*",
+		"unfurl.js": "^6.4.0"
+	},
+	"devDependencies": {
+		"@types/lodash.throttle": "^4.1.9",
+		"@types/react": "^18.3.18",
+		"@types/react-dom": "^18.3.5",
+		"@vitejs/plugin-react-swc": "^3.10.2",
+		"concurrently": "^9.1.2",
+		"typescript": "^5.8.3",
+		"vite": "^5.0.0",
+		"vite-plugin-srvx": "^1.0.2"
+	}
+}
